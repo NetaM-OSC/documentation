@@ -196,3 +196,42 @@ curl --location \
      -XGET 'http://<netam_host>/api/v1/sections/1/export' \
      --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
 ```
+
+### Get section usage
+
+You could get section usage.
+
+| Type   | Value                                                     |
+| ------ | --------------------------------------------------------- |
+| Method | GET                                                       |
+| URL    | http://<netam_server>/api/v1/sections/<section_id>/usages |
+
+#### Request answer
+
+```json
+[
+    {
+        "id": 14,
+        "ip_used": "127.0.0.1",
+        "fqdn": null,
+        "description": null,
+        "state": "actived"
+    },
+    {
+        "id": 15,
+        "ip_used": "127.0.0.2",
+        "fqdn": null,
+        "description": null,
+        "state": "actived"
+    },
+    ...
+]
+```
+
+#### Example
+
+```bash
+curl --location \
+     -XGET 'http://<netam_host>/api/v1/sections/1/usages' \
+     --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
+```
