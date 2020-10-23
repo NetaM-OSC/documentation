@@ -81,7 +81,7 @@ curl --location \
 
 ### Create Sections
 
-You could create sections throught API if account as required hability.
+You could create sections throught API if account as required ability.
 
 | Type   | Value                                 |
 | ------ | ------------------------------------- |
