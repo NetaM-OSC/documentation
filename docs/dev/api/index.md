@@ -14,6 +14,8 @@ To request token, you must send POST request to endpoint `http://<netam_host>/oa
 
 Token validity are limited to one day next to generation.
 
+**The token must be declared in each API request into headers with format `'Authorization: Bearer <getted_token>'`**
+
 ### Request answer
 
 This request give you an answer like:
@@ -35,4 +37,44 @@ curl --location \
      --form 'username=toto@me.com' \
      --form 'password=azazazazazaz' \
      --form 'grant_type=password'
+```
+
+## Sections
+
+### Get Sections list
+
+You could retrieve a list of all sections you was granted in software.
+
+| Type   | Value                                 |
+| ------ | ------------------------------------- |
+| Method | GET                                   |
+| URL    | http://<netam_server>/api/v1/sections |
+
+#### Request answer
+
+```json
+[
+  {
+    "id": 2,
+    "name": "example_v6",
+    "description": "This section is designed for example with IPv6",
+    "network": "::/124",
+    "schedule": ""
+  },
+  {
+    "id": 1,
+    "name": "example_v4",
+    "description": "This section is designed for example with IPv4",
+    "network": "127.0.0.0/24",
+    "schedule": ""
+  }
+]
+```
+
+#### Example
+
+```bash
+curl --location \
+     --XGET 'http://<netam_host>/api/v1/sections' \
+     --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
 ```
