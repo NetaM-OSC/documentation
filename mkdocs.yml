@@ -28,4 +28,6 @@ plugins:
 # Navigation configuration
 nav:
   - Home: index.md
+  - Versions:
+      - dev: dev/dev.md
   - License: license.md
