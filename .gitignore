@@ -6,3 +6,9 @@
 
 # Include repository files
 !README.md
+!mkdocs.yml
+!requirements.txt
+!docs
+!docs/**
+!.github
+!.github/**
