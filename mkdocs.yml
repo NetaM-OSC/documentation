@@ -1,5 +1,5 @@
 site_name: NetAM-OSC
 nav:
   - Home: index.md
-  - License: licence.md
+  - License: license.md
 theme: readthedocs
