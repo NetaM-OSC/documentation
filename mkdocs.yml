@@ -8,11 +8,6 @@ site_author: NetAM-OSC
 repo_name: GitHub
 repo_url: https://github.com/NetAM-OSC/documentation/
 
-# Navigation configuration
-nav:
-  - Home: index.md
-  - License: license.md
-
 # Theme configuration
 theme:
   name: readthedocs
@@ -30,3 +25,8 @@ markdown_extensions:
 plugins:
   - search:
       min_search_lenght: 2
+
+# Navigation configuration
+nav:
+  - Home: index.md
+  - License: license.md
