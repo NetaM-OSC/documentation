@@ -107,12 +107,12 @@ curl --location \
      -XGET 'http://<netam_host>/api/v1/sections' \
      --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o' \
      -d '{
-"id": 3,
-"name": "example_api",
-"description": null,
-"network": "127.0.0.0/25",
-"schedule": ""
-}'
+       "id": 3,
+       "name": "example_api",
+       "description": null,
+       "network": "127.0.0.0/25",
+       "schedule": ""
+     }'
 ```
 
 ### Get Section details
@@ -234,4 +234,38 @@ You could get section usage.
 curl --location \
      -XGET 'http://<netam_host>/api/v1/sections/1/usages' \
      --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
+```
+
+### Create section usage
+
+You could create section usage.
+
+| Type   | Value                                                     |
+| ------ | --------------------------------------------------------- |
+| Method | POST                                                      |
+| URL    | http://<netam_server>/api/v1/sections/<section_id>/usages |
+
+#### Request answer
+
+```json
+{
+  "id": 274,
+  "ip_used": "127.0.0.1",
+  "fqdn": "",
+  "description": null,
+  "state": "actived"
+}
+```
+
+#### Example
+
+```bash
+curl --location \
+     -XPOST 'http://<netam_host>/api/v1/sections/1/usages' \
+     --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o' \
+     -d '{
+       "ip_used": "127.0.0.1",
+       "fqdn": "",
+       "state": "activated"
+     }'
 ```
