@@ -10,8 +10,7 @@ repo_url: https://github.com/NetAM-OSC/documentation/
 
 # Theme configuration
 theme:
-  name: readthedocs
-  titles_only: true
+  name: lux
 
 # Markdown extensions configurations
 markdown_extensions:
@@ -29,4 +28,6 @@ plugins:
 # Navigation configuration
 nav:
   - Home: index.md
+  - Versions:
+      - dev: dev/index.md
   - License: license.md
