@@ -145,3 +145,28 @@ curl --location \
      -XGET 'http://<netam_host>/api/v1/sections/1' \
      --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
 ```
+
+### Launch section scan
+
+You could launch section scan.
+
+| Type   | Value                                                   |
+| ------ | ------------------------------------------------------- |
+| Method | POST                                                    |
+| URL    | http://<netam_server>/api/v1/sections/<section_id>/scan |
+
+#### Request answer
+
+```json
+{
+  "status": "ack"
+}
+```
+
+#### Example
+
+```bash
+curl --location \
+     -XPOST 'http://<netam_host>/api/v1/sections/1/scan' \
+     --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
+```
