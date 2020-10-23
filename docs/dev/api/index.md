@@ -75,6 +75,6 @@ You could retrieve a list of all sections you was granted in software.
 
 ```bash
 curl --location \
-     --XGET 'http://<netam_host>/api/v1/sections' \
+     -XGET 'http://<netam_host>/api/v1/sections' \
      --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
 ```
