@@ -114,3 +114,34 @@ curl --location \
 "schedule": ""
 }'
 ```
+
+### Get Section details
+
+You could retrieve details of specific section.
+
+| Type   | Value                                              |
+| ------ | -------------------------------------------------- |
+| Method | GET                                                |
+| URL    | http://<netam_server>/api/v1/sections/<section_id> |
+
+#### Request answer
+
+```json
+[
+  {
+    "id": 1,
+    "name": "example_v4",
+    "description": "This section is designed for example with IPv4",
+    "network": "127.0.0.0/24",
+    "schedule": ""
+  }
+]
+```
+
+#### Example
+
+```bash
+curl --location \
+     -XGET 'http://<netam_host>/api/v1/sections/1' \
+     --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
+```
