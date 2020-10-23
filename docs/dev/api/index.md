@@ -78,3 +78,39 @@ curl --location \
      -XGET 'http://<netam_host>/api/v1/sections' \
      --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
 ```
+
+### Create Sections
+
+You could create sections throught API if account as required hability.
+
+| Type   | Value                                 |
+| ------ | ------------------------------------- |
+| Method | POST                                  |
+| URL    | http://<netam_server>/api/v1/sections |
+
+#### Request answer
+
+```json
+{
+    "id": 3,
+    "name": "example_api",
+    "description": null,
+    "network": "127.0.0.0/25",
+    "schedule": ""
+}
+```
+
+#### Example
+
+```bash
+curl --location \
+     -XGET 'http://<netam_host>/api/v1/sections' \
+     --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o' \
+     -d '{
+"id": 3,
+"name": "example_api",
+"description": null,
+"network": "127.0.0.0/25",
+"schedule": ""
+}'
+```
