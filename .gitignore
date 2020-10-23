@@ -6,3 +6,6 @@
 
 # Include repository files
 !README.md
+!mkdocs.yml
+!docs
+!docs/**
