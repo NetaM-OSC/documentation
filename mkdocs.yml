@@ -29,5 +29,5 @@ plugins:
 nav:
   - Home: index.md
   - Versions:
-      - dev: dev/dev.md
+      - dev: dev/index.md
   - License: license.md
