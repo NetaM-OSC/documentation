@@ -1,1 +1,5 @@
-site_name: My Docs
+site_name: NetAM-OSC
+nav:
+  - Home: index.md
+  - License: licence.md
+theme: readthedocs
