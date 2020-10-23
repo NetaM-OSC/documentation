@@ -170,3 +170,29 @@ curl --location \
      -XPOST 'http://<netam_host>/api/v1/sections/1/scan' \
      --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
 ```
+
+### Export section usage
+
+You could perform section csv export.
+
+| Type   | Value                                                     |
+| ------ | --------------------------------------------------------- |
+| Method | GET                                                       |
+| URL    | http://<netam_server>/api/v1/sections/<section_id>/export |
+
+#### Request answer
+
+```csv
+ID,Section,Address,FQDN,Description,State
+1,example_v4,127.0.0.1,,,Active
+1,example_v4,127.0.0.2,,,Active
+1,example_v4,127.0.0.3,,,Active
+```
+
+#### Example
+
+```bash
+curl --location \
+     -XGET 'http://<netam_host>/api/v1/sections/1/export' \
+     --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
+```
