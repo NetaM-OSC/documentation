@@ -8,8 +8,8 @@ Internal documentation is accessible throught the url `http://<netam_host>/docs`
 NetAM use oauth mechanism to provide tokens.  
 To request token, you must send POST request to endpoint `http://<netam_host>/oauth/token` and fill form datas :
 
-- username : <mail_address>
-- password : <associated_password>
+- username : <mail_address\>
+- password : <associated_password\>
 - grant_type : password
 
 Token validity are limited to one day next to generation.
@@ -48,7 +48,7 @@ You could retrieve a list of all sections you was granted in software.
 | Type   | Value                                 |
 | ------ | ------------------------------------- |
 | Method | GET                                   |
-| URL    | http://<netam_server>/api/v1/sections |
+| URL    | http://<netam_server\>/api/v1/sections |
 
 #### Request answer
 
@@ -81,12 +81,12 @@ curl --location \
 
 ### Create Sections
 
-You could create sections throught API if account as required ability.
+You could create sections through API if account as required ability.
 
 | Type   | Value                                 |
 | ------ | ------------------------------------- |
 | Method | POST                                  |
-| URL    | http://<netam_server>/api/v1/sections |
+| URL    | http://<netam_server\>/api/v1/sections |
 
 #### Request answer
 
@@ -119,10 +119,10 @@ curl --location \
 
 You could retrieve details of specific section.
 
-| Type   | Value                                              |
-| ------ | -------------------------------------------------- |
-| Method | GET                                                |
-| URL    | http://<netam_server>/api/v1/sections/<section_id> |
+| Type   | Value                                                |
+| ------ | ---------------------------------------------------- |
+| Method | GET                                                  |
+| URL    | http://<netam_server\>/api/v1/sections/<section_id\> |
 
 #### Request answer
 
@@ -150,10 +150,10 @@ curl --location \
 
 You could launch section scan.
 
-| Type   | Value                                                   |
-| ------ | ------------------------------------------------------- |
-| Method | POST                                                    |
-| URL    | http://<netam_server>/api/v1/sections/<section_id>/scan |
+| Type   | Value                                                     |
+| ------ | --------------------------------------------------------- |
+| Method | POST                                                      |
+| URL    | http://<netam_server\>/api/v1/sections/<section_id\>/scan |
 
 #### Request answer
 
@@ -175,10 +175,10 @@ curl --location \
 
 You could perform section csv export.
 
-| Type   | Value                                                     |
-| ------ | --------------------------------------------------------- |
-| Method | GET                                                       |
-| URL    | http://<netam_server>/api/v1/sections/<section_id>/export |
+| Type   | Value                                                       |
+| ------ | ----------------------------------------------------------- |
+| Method | GET                                                         |
+| URL    | http://<netam_server\>/api/v1/sections/<section_id\>/export |
 
 #### Request answer
 
@@ -201,10 +201,10 @@ curl --location \
 
 You could get section usage.
 
-| Type   | Value                                                     |
-| ------ | --------------------------------------------------------- |
-| Method | GET                                                       |
-| URL    | http://<netam_server>/api/v1/sections/<section_id>/usages |
+| Type   | Value                                                       |
+| ------ | ----------------------------------------------------------- |
+| Method | GET                                                         |
+| URL    | http://<netam_server\>/api/v1/sections/<section_id\>/usages |
 
 #### Request answer
 
@@ -240,10 +240,10 @@ curl --location \
 
 You could create section usage.
 
-| Type   | Value                                                     |
-| ------ | --------------------------------------------------------- |
-| Method | POST                                                      |
-| URL    | http://<netam_server>/api/v1/sections/<section_id>/usages |
+| Type   | Value                                                       |
+| ------ | ----------------------------------------------------------- |
+| Method | POST                                                        |
+| URL    | http://<netam_server\>/api/v1/sections/<section_id\>/usages |
 
 #### Request answer
 
@@ -268,4 +268,180 @@ curl --location \
        "fqdn": "",
        "state": "activated"
      }'
+```
+
+### Request IP in section
+
+You could create section usage.
+
+| Type   | Value                                                           |
+| ------ | --------------------------------------------------------------- |
+| Method | POST                                                            |
+| URL    | http://<netam_server\>/api/v1/sections/<section_id\>/request_ip |
+
+#### Request answer
+
+```json
+{
+  "id": 274,
+  "ip_used": "127.0.0.2",
+  "fqdn": null,
+  "description": null,
+  "state": "actived"
+}
+```
+
+#### Example
+
+```bash
+curl --location \
+     -XPOST 'http://<netam_host>/api/v1/sections/1/request_ip' \
+     --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
+```
+
+
+## VLAN
+
+### Get VLANs list
+
+You could retrieve a list of all vlans you was granted in software.
+
+| Type   | Value                                  |
+| ------ | -------------------------------------- |
+| Method | GET                                    |
+| URL    | http://<netam_server\>/api/v1/vlans    | 
+
+#### Request answer
+
+```json
+[
+    {
+        "id": 1,
+        "vid": 1,
+        "name": "default",
+        "description": "Default Vlan."
+    }
+]
+```
+
+#### Example
+
+```bash
+curl --location \
+     -XGET 'http://<netam_host>/api/v1/vlans' \
+     --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
+```
+
+### Get VLANs details
+
+You could retrieve a list of all vlans you was granted in software.
+
+| Type   | Value                                  |
+| ------ | -------------------------------------- |
+| Method | GET                                    |
+| URL    | http://<netam_server\>/api/v1/vlans/1  | 
+
+#### Request answer
+
+```json
+{
+    "id": 1,
+    "vid": 1,
+    "name": "default",
+    "description": "Default Vlan."
+}
+```
+
+#### Example
+
+```bash
+curl --location \
+     -XGET 'http://<netam_host>/api/v1/vlans/1' \
+     --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o'
+```
+
+### Create VLAN
+
+You could create sections through API if account as required ability.
+
+| Type   | Value                                  |
+| ------ | -------------------------------------- |
+| Method | POST                                   |
+| URL    | http://<netam_server\>/api/v1/vlans    |
+
+#### Request answer
+
+```json
+{
+    "id": 2,
+    "vid": 3,
+    "name": "example_api",
+    "description": null
+}
+```
+
+#### Example
+
+```bash
+curl --location \
+     -XGET 'http://<netam_host>/api/v1/vlans' \
+     --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o' \
+     -d '{
+       "vid": 3,
+       "name": "example_vlan",
+       "description": null
+     }'
+```
+
+## Backups
+
+### List Backup
+
+You could list backups through API if account as required ability
+
+| Type   | Value                                  |
+| ------ | -------------------------------------- |
+| Method | GET                                    |
+| URL    | http://<netam_server\>/api/v1/backups  |
+
+#### Request answer
+
+```json
+{
+    "backups": [
+        "1604758813_2020_11_07_1.5.0-pre.sql.gz",
+        "1604758815_2020_11_07_1.5.0-pre.sql.gz"
+    ]
+}
+```
+
+#### Example
+
+```bash
+curl --location \
+     -XGET 'http://<netam_host>/api/v1/backups' \
+     --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o' \
+```
+
+### Create Backup
+
+You could create backups through API if account as required ability
+
+| Type   | Value                                  |
+| ------ | -------------------------------------- |
+| Method | POST                                   |
+| URL    | http://<netam_server\>/api/v1/backups  |
+
+#### Request answer
+
+```
+"7169176bc7e2fddf121264bd"
+```
+
+#### Example
+
+```bash
+curl --location \
+     -XPOST 'http://<netam_host>/api/v1/backups' \
+     --header 'Authorization: Bearer zmL0UxPjqJhfzSXDcbjJp7Hs6wr6JF6SnHp1ybxBH_o' \
 ```
