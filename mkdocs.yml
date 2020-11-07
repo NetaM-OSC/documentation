@@ -10,7 +10,7 @@ repo_url: https://github.com/NetAM-OSC/documentation/
 
 # Theme configuration
 theme:
-  name: lux
+  name: flatly
 
 # Markdown extensions configurations
 markdown_extensions:
